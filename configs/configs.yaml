@@ -1,0 +1,59 @@
+ContextNet:
+
+  project_name: IFCContextNet
+  use_wandb: true
+  gpu_device: '0'
+  seed: 42
+
+  input_dim: 128
+  hidden_dim: 512
+  output_dim: 512
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  eta_min: 0.00001
+  train_batch_size: 8
+  test_batch_size: 16
+
+  num_epochs: 50
+  val_ratio: 0.25          # val 占 train-pool 比例
+  build_max_hop: 5         # spa 缓存的最大跳
+
+  isg_name: 'REVERSE_IFCSchemaGraph.bin'
+  results_dir: 'Q:\pychem_project\IFCContextNet_Master\results'
+
+  sem_availability_only: true
+
+  # 数据集路径
+  datasets:
+    test_100:
+      train_data_dir: 'Q:\context100\train'
+      test_data_dir:  'Q:\context100\test'
+      cache_dir:      'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_100'
+    test_500:
+      train_data_dir: 'Q:\context500\train'
+      test_data_dir:  'Q:\context500\test'
+      cache_dir:      'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_500'
+    test_1000:
+      train_data_dir: 'Q:\context1000\train'
+      test_data_dir:  'Q:\context1000\test'
+      cache_dir:      'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_1000'
+    test_5000:
+      train_data_dir: 'Q:\context5000\train'
+      test_data_dir: 'Q:\context5000\test'
+      cache_dir: 'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_5000'
+
+
+  # 网格定义
+  grid:
+    datasets: [test_100, test_500, test_1000, test_5000]
+    modalities:
+      - [ sem, spa]
+      - [ spa ]
+      - [ sem ]
+      - [ rep ]
+      - [rep, spa]
+      - [rep, sem]
+      - [rep, sem, spa]
+
+    n_hops: [2]
+    edge_direction: [REVERSE]

@@ -1,0 +1,15 @@
+﻿class,precision,recall,f1,support
+IfcBeam,0.2684,0.9540,0.4189,1000
+IfcCableCarrierFitting,0.5029,0.9670,0.6616,1000
+IfcCableCarrierSegment,0.0000,0.0000,0.0000,1000
+IfcColumn,0.0000,0.0000,0.0000,1000
+IfcCovering,1.0000,0.9020,0.9485,1000
+IfcCurtainWall,0.9852,1.0000,0.9926,1000
+IfcDuctFitting,0.2963,0.0080,0.0156,1000
+IfcDuctSegment,0.3636,0.0040,0.0079,1000
+IfcPipeFitting,0.2832,0.9280,0.4339,1000
+IfcPipeSegment,0.3203,0.1470,0.2015,1000
+IfcRailing,0.4231,0.1760,0.2486,1000
+IfcSlab,0.7344,0.0470,0.0883,1000
+IfcStairFlight,0.6511,0.9350,0.7677,1000
+IfcWall,1.0000,0.9150,0.9556,1000

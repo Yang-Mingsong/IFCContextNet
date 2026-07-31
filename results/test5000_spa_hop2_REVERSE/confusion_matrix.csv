@@ -1,0 +1,15 @@
+﻿true\pred,IfcBeam,IfcCableCarrierFitting,IfcCableCarrierSegment,IfcColumn,IfcCovering,IfcCurtainWall,IfcDuctFitting,IfcDuctSegment,IfcPipeFitting,IfcPipeSegment,IfcRailing,IfcSlab,IfcStairFlight,IfcWall
+IfcBeam,770,0,0,109,0,1,0,0,0,0,10,48,13,49
+IfcCableCarrierFitting,0,932,62,0,0,0,3,1,0,2,0,0,0,0
+IfcCableCarrierSegment,0,57,933,0,1,0,1,5,0,2,0,0,0,1
+IfcColumn,54,1,1,843,0,4,0,0,0,0,12,9,8,68
+IfcCovering,0,0,2,0,938,1,23,20,2,3,1,5,0,5
+IfcCurtainWall,2,0,0,3,0,954,0,0,0,0,13,8,1,19
+IfcDuctFitting,0,2,11,0,31,0,855,97,1,3,0,0,0,0
+IfcDuctSegment,0,8,9,2,50,0,61,848,3,14,1,1,0,3
+IfcPipeFitting,0,4,3,0,49,0,8,9,829,98,0,0,0,0
+IfcPipeSegment,0,4,6,0,41,0,12,12,48,874,2,0,0,1
+IfcRailing,10,2,0,11,1,3,0,0,2,1,871,23,52,24
+IfcSlab,72,0,0,12,3,5,0,1,0,0,32,832,15,28
+IfcStairFlight,8,0,0,11,0,2,0,0,0,0,38,15,897,29
+IfcWall,40,0,1,59,2,15,1,2,1,1,33,19,12,814
