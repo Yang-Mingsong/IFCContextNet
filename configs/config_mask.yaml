@@ -1,0 +1,42 @@
+MaskEval:
+  gpu_device: '0'
+
+  input_dim: 128
+  hidden_dim: 512
+  output_dim: 512
+  n_hops: 2
+  build_max_hop: 2
+  edge_direction: REVERSE
+  isg_name: 'REVERSE_IFCSchemaGraph.bin'
+  ifc_schema: 'IFC4'
+
+  strict_sem_element_detection: true
+  mask_modalities: [sem, spa]
+
+  # 0%/100% once; 10/30/50/70% each 3 random realizations
+  mask_ratios: [0.0, 0.1, 0.3, 0.5, 0.7, 1.0]
+  mask_seeds: [42, 43, 44]
+  eval_seed: 42
+
+  test_batch_size: 16
+  num_workers: 4
+  persistent_workers: true
+  prefetch_factor: 2
+  pin_memory: false
+  lazy: false
+  resume: true
+
+  results_dir: 'Q:\pychem_project\IFCContextNet_Master\results\mask_4090'
+
+  datasets:
+    test_100:
+      test_data_dir: 'Q:\context100\test'
+      cache_dir: 'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_100'
+      checkpoint: 'Q:\pychem_project\IFCContextNet_Master\results\test_100_rep+sem+spa_hop2_REVERSE\model_epoch50.pt'
+      embedding_file: 'Q:\pychem_project\IFCContextNet_Master\data\REVERSE_IFCSchemaGraph.bin'
+
+    test_500:
+      test_data_dir: 'Q:\context500\test'
+      cache_dir: 'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_500'
+      checkpoint: 'Q:\pychem_project\IFCContextNet_Master\results\test500_rep+sem+spa_hop2_REVERSE\model_epoch50.pt'
+      embedding_file: 'Q:\pychem_project\IFCContextNet_Master\data\REVERSE_IFCSchemaGraph.bin'

@@ -1,0 +1,40 @@
+ContextNet:
+  project_name: IFCContextNet_multiseed500
+  use_wandb: true
+  gpu_device: '0'
+
+  input_dim: 128
+  hidden_dim: 512
+  output_dim: 512
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  eta_min: 0.00001
+  train_batch_size: 8
+  test_batch_size: 16
+  num_epochs: 50
+
+  build_max_hop: 5
+  sem_availability_only: false
+  isg_name: 'REVERSE_IFCSchemaGraph.bin'
+
+  results_dir: 'Q:\pychem_project\IFCContextNet_Master\results\multiseed_500'
+
+  datasets:
+    test_500:
+      train_data_dir: 'Q:\context500\train'
+      test_data_dir:  'Q:\context500\test'
+      cache_dir:      'Q:\pychem_project\IFCContextNet_Master\data\cache\BIMCompNet_500'
+
+  grid:
+    datasets: [test_500]  # [test_100, test_500, test_1000, test_5000]
+    modalities:
+      - [rep]
+      - [rep, sem, spa]
+      - [sem]
+      - [spa]
+      - [rep, sem]
+      - [rep, spa]
+      - [sem, spa]
+    n_hops: [2]
+    edge_direction: [REVERSE]
+    seeds: [42, 43, 44]
